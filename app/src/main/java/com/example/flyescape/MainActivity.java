@@ -223,9 +223,8 @@ public class MainActivity extends AppCompatActivity {
         if(sensorType) {
             sensorManager.unregisterListener(sensorEventListener,sensor);
         }
-        Bundle bund;
         Intent intent;
-        bund = new Bundle();
+        Bundle bund = new Bundle();
         bund.putString(MainActivity.PLAYER_NAME,playerName);
         bund.putInt(SCORE,gameManager.getScore());
         bund.putBoolean(SENSOR_TYPE,sensorType);
@@ -246,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void moveDown() {
+        gameManager.checkForBonus();
         if (gameManager.checkForHit()) {
             decreaseHeart();
             int deadFlyPos = gameManager.getFlyPos();
@@ -253,7 +253,6 @@ public class MainActivity extends AppCompatActivity {
             stopShowingBlood(deadFlyPos);
         }
         gameManager.moveDown();
-        gameManager.checkForBonus();
         updateBoard();
     }
 
