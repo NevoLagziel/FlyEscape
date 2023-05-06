@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="2dp"
+    android:background="@color/gold"
+    tools:context=".ScoreBoardActivity">
+
+    <RelativeLayout
+        android:id="@+id/scoreboard_RLY_topframe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/scoreboard_LAY_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/scoreboard_MTV_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:text="TOP 10 RECORDS"
+                android:textAllCaps="true"
+                android:textSize="28sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scoreboard_LAY_goback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/scoreboard_IMG_goback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_arrow_back_24"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/scoreboard_FRM_scores"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/gold"
+        android:layout_marginBottom="1dp"
+        />
+
+    <FrameLayout
+        android:id="@+id/scoreboard_FRM_map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/green_100"
+        android:layout_marginBottom="1dp"
+        />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

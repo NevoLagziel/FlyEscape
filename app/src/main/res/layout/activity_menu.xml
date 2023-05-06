@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_100"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:id="@+id/menu_FRM_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop = "50dp"
+        android:background="@color/black"
+        >
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/menu_MTV_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FLY ESCAPE"
+        android:textAllCaps="true"
+        android:textColor="@color/yellow_400"
+        android:textStyle="bold"
+        android:textSize="60sp"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_FRM_text_box"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/menu_FRM_title"
+        android:layout_marginTop="50dp"
+        android:padding="2dp"
+        android:background="@color/black"
+        >
+
+        <EditText
+            android:id="@+id/menu_TXB_text_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textSize="38sp"
+            android:textStyle="italic"
+            android:singleLine="true"
+            android:hint="Enter Name"
+            android:textColorHint="@color/black"
+            android:autofillHints="UnNamed" />
+    </LinearLayout>
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/menu_SWM_speed_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/menu_FRM_text_box"
+        android:layout_marginTop="26dp"
+        android:padding="14dp"
+        android:text="High Speed"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:switchPadding="26dp"
+        android:textSize="25sp"
+        >
+
+    </com.google.android.material.switchmaterial.SwitchMaterial>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/menu_SWM_mode_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/menu_SWM_speed_switch"
+        android:layout_marginTop="26dp"
+        android:padding="14dp"
+        android:text="Rotate Mode"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:switchPadding="26dp"
+        android:textSize="25sp"
+        >
+    </com.google.android.material.switchmaterial.SwitchMaterial>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menu_BTN_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/menu_BTN_score_board"
+        android:layout_alignEnd="@id/menu_BTN_score_board"
+        android:text="Start Game"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/green_a700"
+        android:textColor="@color/black"
+        android:layout_above="@+id/menu_BTN_score_board"
+        app:cornerRadius="12dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menu_BTN_score_board"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="68dp"
+        android:text="Score Board"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        app:cornerRadius="12dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/gold"
+        android:layout_centerHorizontal="true"
+        />
+
+
+</RelativeLayout>
