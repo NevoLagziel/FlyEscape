@@ -1,20 +1,17 @@
 package com.example.flyescape.logic;
 
-import android.content.Context;
-import android.os.Build;
-import android.os.Handler;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.util.Log;
 import android.widget.Toast;
 
-import java.sql.Array;
+import com.example.flyescape.R;
+import com.example.flyescape.utilities.SignalGenerator;
+
 import java.util.Random;
 
-/**
- * Created by  on ${16},,${2022}
- */
 public class GameManager {
+
+    private final double MAX_SPEED = 2;
+
+    private final double MIN_SPEED = 0.5;
     private int life;
 
     private int hits;
@@ -23,13 +20,34 @@ public class GameManager {
 
     private int flyPos;
 
-    public GameManager(int life)
+    private int score;
+
+    private double speed;
+
+
+    public GameManager(int life , double speed)
     {
         this.life = life;
         this.hits = 0;
-        this.flyPos = 1;
-        this.board = new int[8][3];
-        board[board.length-1][(board[0].length/2)] = 1;
+        this.score = 0;
+        this.board = new int[11][5];
+        this.flyPos = (board[0].length/2);
+        board[board.length-1][flyPos] = 1;
+        this.speed = speed;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void increaseSpeed(){
+        if(speed < MAX_SPEED)
+            speed = speed*(1.25);
+    }
+
+    public void decreaseSpeed(){
+        if(speed > MIN_SPEED)
+            speed = speed/(1.25);
     }
 
     public int getHits(){
@@ -47,19 +65,27 @@ public class GameManager {
     public int getFlyPos(){
         return flyPos;
     }
-    public boolean checkForHit(Context context , Vibrator v){
+
+    public int getScore(){
+        return score;
+    }
+    public boolean checkForHit(){
             if(board[board.length-2][flyPos] == 1) {
                 hits++;
-                Toast.makeText(context, " 🤕 Ouch!", Toast.LENGTH_SHORT).show();
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-                } else {
-                    //deprecated in API 26
-                    v.vibrate(500);
-                }
+                SignalGenerator.getInstance().sound(R.raw.squish);
+                SignalGenerator.getInstance().toast(" 🤕 Ouch!",Toast.LENGTH_SHORT);
+                SignalGenerator.getInstance().vibrate(500);
                 return true;
             }
             return false;
+    }
+
+    public void checkForBonus(){
+        if(board[board.length-2][flyPos] == 2) {
+            score += 10;
+            SignalGenerator.getInstance().toast("🥳 +10 points",Toast.LENGTH_SHORT);
+            SignalGenerator.getInstance().sound(R.raw.slurp);
+        }
     }
     public void moveFly(int flyPos){
         if(flyPos <= board[0].length-1 && flyPos >= 0) {
@@ -71,8 +97,12 @@ public class GameManager {
 
     public int addObs(){
         Random random = new Random();
+        int whatToAdd = random.nextInt(20);
         int randomNumber = random.nextInt(board[0].length);
-        board[0][randomNumber] = 1;
+        if(whatToAdd < 17) {
+            board[0][randomNumber] = 1;
+        }else
+            board[0][randomNumber] = 2;
         return randomNumber;
     }
 
@@ -88,7 +118,15 @@ public class GameManager {
                     }
                     board[i][j] = 0;
                 }
+                if(board[i][j] == 2)
+                {
+                    if(i+1 < (board.length - 1)) {
+                        board[i + 1][j] = 2;
+                    }
+                    board[i][j] = 0;
+                }
             }
         }
+        score++;
     }
 }

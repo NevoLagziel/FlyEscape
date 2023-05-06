@@ -16,7 +16,9 @@
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_IMG_heart1"
@@ -41,6 +43,46 @@
             app:srcCompat="@drawable/ic_icon_heart" />
     </LinearLayout>
 
+    <LinearLayout
+    android:layout_width="140dp"
+    android:layout_height="50dp"
+    android:layout_marginEnd="6dp"
+    android:layout_marginTop="6dp"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentTop="true">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_score"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:text="000"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:textColor="@color/green_a700"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/main_LBL_speed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:text="000 Km/h"
+            android:textStyle="italic"
+            android:textSize="36sp"
+            android:textColor="@color/yellow_400"/>
+    </LinearLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/main_FAB_left"
@@ -48,7 +90,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/teal_200"
         android:src="@drawable/baseline_keyboard_double_arrow_left_24"
         app:fabCustomSize="60dp"
@@ -74,6 +119,88 @@
         android:layout_marginTop="60dp"
         android:layout_marginBottom="80dp"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop01"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop02"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop03"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop04"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop05"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -124,6 +251,36 @@
 
                 </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop14"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -168,6 +325,36 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/main_IMG_flipflop23"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop24"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop25"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -228,6 +415,36 @@
 
                 </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop34"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop35"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -279,6 +496,36 @@
                         app:srcCompat="@drawable/flip_flops" />
 
                 </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop44"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop45"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -332,6 +579,36 @@
 
                 </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop54"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop55"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -383,6 +660,36 @@
                         app:srcCompat="@drawable/flip_flops" />
 
                 </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop64"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop65"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -436,6 +743,200 @@
 
                 </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop74"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop75"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop81"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop82"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop83"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop84"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop85"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop91"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop92"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop93"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop94"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_flipflop95"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/flip_flops" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -449,7 +950,7 @@
                     android:layout_weight="1">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/main_IMG_flyleft"
+                        android:id="@+id/main_IMG_fly1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -464,10 +965,11 @@
                     android:layout_weight="1">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/main_IMG_flymid"
+                        android:id="@+id/main_IMG_fly2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:visibility="invisible"
                         app:srcCompat="@drawable/fruit_fly" />
 
                 </LinearLayout>
@@ -478,14 +980,43 @@
                     android:layout_weight="1">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/main_IMG_flyright"
+                        android:id="@+id/main_IMG_fly3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:visibility="invisible"
                         app:srcCompat="@drawable/fruit_fly" />
 
                 </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_fly4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/fruit_fly" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG_fly5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/fruit_fly" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
