@@ -46,6 +46,7 @@ public class MenuActivity extends AppCompatActivity {
             Intent intent;
             intent = new Intent(MenuActivity.this, ScoreBoardActivity.class);
             startActivity(intent);
+            finish();
         });
     }
 
@@ -69,6 +70,7 @@ public class MenuActivity extends AppCompatActivity {
         myIntent = new Intent(this, MainActivity.class);
         myIntent.putExtra(BUNDLE, bundle);
         startActivity(myIntent);
+        finish();
     }
 
     @Override

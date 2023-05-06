@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
         intent = new Intent(this, LostActivity.class);
         intent.putExtra(MenuActivity.BUNDLE, bund);
         startActivity(intent);
-        MainActivity.this.finish();
+        finish();
     }
 
     private void addObs() {
