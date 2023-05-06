@@ -59,8 +59,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void GameActivity(boolean sensorFlag,boolean speedFlag,String playerName) {
-        //if(TextUtils.isEmpty(playerName))
-        //    playerName = "UnNamed";
+        if(TextUtils.isEmpty(playerName))
+            playerName = "UnNamed";
         Intent myIntent;
         Bundle bundle = new Bundle();
         bundle.putBoolean(MainActivity.SENSOR_TYPE,sensorFlag);

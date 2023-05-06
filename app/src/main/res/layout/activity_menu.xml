@@ -51,7 +51,7 @@
             android:singleLine="true"
             android:hint="Enter Name"
             android:textColorHint="@color/black"
-            android:autofillHints="UnNamed" />
+            />
     </LinearLayout>
 
 
