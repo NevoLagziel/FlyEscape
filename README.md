@@ -37,3 +37,7 @@ third game is a rotate mode game without buttons rotate right and left in order 
 also you can see the speed going up and down, that speed changes are made by tilting the divice forwards and backwards.
 and at the begging of the game the name check entered in ordered to show it at the scoreboard and as you can see the score has been added at the right location,
 and when you click on it it shows it on the map(zoomin and the name of the marker pops).
+
+
+https://user-images.githubusercontent.com/118263095/236640070-11677108-344f-4e70-ab96-5deb33a10c15.mp4
+
