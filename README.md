@@ -29,7 +29,7 @@ in the example video:
 
 first game is a normal game you can see the sound effect of getting hit and the sound of collecting a bonus.
 plus the normal speed that is written at the bottom of the screen and the score at the top.
-then you can see the loser scrren and the score board screen.
+then you can see the loser screen and the score board screen.
 
 second game is a high speed game with normal buttons.
 
