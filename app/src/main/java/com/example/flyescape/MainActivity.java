@@ -1,11 +1,6 @@
 package com.example.flyescape;
 
-import android.content.Context;
 import android.content.Intent;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -14,7 +9,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.flyescape.interfaces.SensorsCallBack;
 import com.example.flyescape.logic.GameManager;
+import com.example.flyescape.utilities.SensorsManager;
 import com.example.flyescape.utilities.SignalGenerator;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.imageview.ShapeableImageView;
@@ -54,15 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private GameManager gameManager;
 
-    private SensorManager sensorManager;
-
-    private Sensor sensor;
-
-    private SensorEventListener sensorEventListener;
-
-    private long moveTimestamp = 0;
-
-    private long changeSpeedTimestamp = 0;
+    private SensorsManager sensorsManager;
 
     private MediaPlayer mediaPlayer;
 
@@ -86,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,64 +96,34 @@ public class MainActivity extends AppCompatActivity {
         if(sensorType){
             main_FAB_left.setVisibility(View.INVISIBLE);
             main_FAB_right.setVisibility(View.INVISIBLE);
-            initSensors();
-            initSensorEventListener();
+            initSensorsManager();
         }else{
             setClickListeners();
         }
         changeSpeedView();
-
         mediaPlayer = SignalGenerator.getInstance().backgroundSound(R.raw.main_activity_background);
     }
 
-    private void initSensors() {
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-    }
-
-    private void initSensorEventListener(){
-        sensorEventListener = new SensorEventListener() {
+    private void initSensorsManager() {
+        sensorsManager = new SensorsManager(this, new SensorsCallBack() {
             @Override
-            public void onSensorChanged(SensorEvent event) {
-                float x = event.values[0];
-                float y = event.values[1];
-
-                calculateStep(x, y);
+            public void moveFly(int side) {
+                clicked(side);
             }
 
             @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-                //not needed
+            public void changeGameSpeed(int change) {
+                changeSpeed(change);
             }
-        };
-    }
-
-    private void calculateStep(float x, float y) {
-        if (System.currentTimeMillis() - moveTimestamp > 300) {
-            moveTimestamp = System.currentTimeMillis();
-            if (x > 3.0) {
-                clicked(-1);
-            } else if (x < -3.0) {
-                clicked(1);
-            }
-        }
-        if (System.currentTimeMillis() - changeSpeedTimestamp > 600) {
-            changeSpeedTimestamp = System.currentTimeMillis();
-            if (y > 3.0) {
-                changeSpeed(-1);
-            } else if (y < -3.0)
-                changeSpeed(1);
-
-        }
+        });
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         stopRunnable();
-        if(sensorType){
-            sensorManager.unregisterListener(sensorEventListener,sensor);
-        }
+        if(sensorType)
+            sensorsManager.stop();
         mediaPlayer.pause();
     }
 
@@ -171,9 +131,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         activeRunnable();
-        if(sensorType){
-            sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
-        }
+        if(sensorType)
+            sensorsManager.start();
         mediaPlayer.start();
     }
 
@@ -220,9 +179,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void openLooserScreen() {
         stopRunnable();
-        if(sensorType) {
-            sensorManager.unregisterListener(sensorEventListener,sensor);
-        }
+        if(sensorType)
+            sensorsManager.stop();
         Intent intent;
         Bundle bund = new Bundle();
         bund.putString(MainActivity.PLAYER_NAME,playerName);
