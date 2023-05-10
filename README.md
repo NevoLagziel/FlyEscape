@@ -34,7 +34,7 @@ then you can see the loser screen and the score board screen.
 second game is a high speed game with normal buttons.
 
 third game is a rotate mode game without buttons rotate right and left in order to move,
-also you can see the speed going up and down, that speed changes are made by tilting the divice forwards and backwards.
+also you can see the speed going up and down, that speed changes are made by tilting the device forwards and backwards.
 and at the begging of the game the name check entered in ordered to show it at the scoreboard and as you can see the score has been added at the right location,
 and when you click on it it shows it on the map(zooming and the name of the marker pops).
 
